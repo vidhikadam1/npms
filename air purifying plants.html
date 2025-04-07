@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Air Purifying Plants - Bonsai Nursary Management">
+    <meta name="author" content="">
+    <title>Air Purifying Plants - Bonsai Nursary Management</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="css/all.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .card-price {
+            font-size: 1.25rem;
+            color: #4eae3a;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .add-to-cart-btn {
+            background: #4eae3a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        .add-to-cart-btn:hover {
+            background: #3d8c2f;
+        }
+        .cart-link {
+            position: relative;
+            padding-right: 25px !important;
+        }
+        .cart-link i {
+            font-size: 1.2em;
+            color: #4eae3a;
+        }
+        .cart-link:hover i {
+            color: #3d8c2f;
+        }
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 5px;
+            background: #4eae3a;
+            color: white;
+            border-radius: 50%;
+            padding: 3px 6px;
+            font-size: 10px;
+            min-width: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4eae3a;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownPlants" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Plants
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPlants">
+                            <a class="dropdown-item" href="indoor plants.html">Indoor Plants</a>
+                            <a class="dropdown-item" href="decorative plants.html">Decorative Plants</a>
+                            <a class="dropdown-item" href="outdoor plants.html">Outdoor Plants</a>
+                            <a class="dropdown-item" href="air purifying plants.html">Air Purifying Plants</a>
+                            <a class="dropdown-item" href="bestseller plants.html">Bestseller Plants</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="blog-home-1.html">How to maintain plants Home 1</a>
+                            <a class="dropdown-item" href="blog-home-2.html">How to maintain plants Home 2</a>
+                            <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login page.html">Login/sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- full Title -->
+    <div class="full-title">
+        <div class="container">
+            <h1 class="mt-4 mb-3">Air Purifying Plants
+                <small>Natural Air Cleaners</small>
+            </h1>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="breadcrumb-main">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Air Purifying Plants</li>
+            </ol>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/evergreen.1.jpg" alt="Chinese Evergreen Plant" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Chinese Evergreen Plant</a>
+                        </h4>
+                        <div class="card-price">₹599</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Chinese Evergreen Plant', 599, 'images/evergreen.1.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-02.jpg" alt="Aloe Vera Plant" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Aloe Vera Plant</a>
+                        </h4>
+                        <div class="card-price">₹399</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Aloe Vera Plant', 399, 'images/portfolio-big-02.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-03.jpg" alt="Golden Pothos" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Golden Pothos</a>
+                        </h4>
+                        <div class="card-price">₹499</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Golden Pothos', 499, 'images/portfolio-big-03.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-04.jpg" alt="Snake Plant" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Snake Plant</a>
+                        </h4>
+                        <div class="card-price">₹699</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Snake Plant', 699, 'images/portfolio-big-04.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-05.jpg" alt="Areca Palm" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Areca Palm</a>
+                        </h4>
+                        <div class="card-price">₹799</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Areca Palm', 799, 'images/portfolio-big-05.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-01.jpg" alt="Rubber Plant" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Rubber Plant</a>
+                        </h4>
+                        <div class="card-price">₹899</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Rubber Plant', 899, 'images/portfolio-big-01.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-02.jpg" alt="Lady Palm" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Lady Palm</a>
+                        </h4>
+                        <div class="card-price">₹999</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Lady Palm', 999, 'images/portfolio-big-02.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="images/portfolio-big-03.jpg" alt="Peace Lily" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Peace Lily</a>
+                        </h4>
+                        <div class="card-price">₹599</div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Peace Lily', 599, 'images/portfolio-big-03.jpg')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination_bar">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Cart Script -->
+    <script>
+        // Update cart count on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+        });
+
+        function addToCart(name, price, image) {
+            // Get existing cart or initialize new one
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartTotal = parseFloat(localStorage.getItem('cartTotal')) || 0;
+            
+            // Check if item already exists in cart
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart total
+            cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('cartTotal', cartTotal);
+            
+            // Update UI
+            updateCartCount();
+            showNotification(`${name} added to cart!`);
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            const cartCount = document.querySelector('.cart-count');
+            cartCount.textContent = count;
+            
+            // Show/hide cart count
+            if (count > 0) {
+                cartCount.style.display = 'block';
+            } else {
+                cartCount.style.display = 'none';
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.display = 'block';
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

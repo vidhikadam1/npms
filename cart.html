@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Shopping cart for your selected services">
+    <meta name="author" content="">
+    <title>Shopping Cart - Bonsai Nursery</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="css/all.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownServices">
+                            <a class="dropdown-item" href="plant-consultation.html">Plant Consultation</a>
+                            <a class="dropdown-item" href="garden-maintenance.html">Garden Maintenance</a>
+                            <a class="dropdown-item" href="plant-delivery.html">Plant Delivery</a>
+                            <a class="dropdown-item" href="repotting-service.html">Repotting Service</a>
+                            <a class="dropdown-item" href="plant-care-tips.html">Plant Care Tips</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlants" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Plants
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPlants">
+                            <a class="dropdown-item" href="indoor plants.html">Indoor Plants</a>
+                            <a class="dropdown-item" href="decorative plants.html">Decorative Plants</a>
+                            <a class="dropdown-item" href="outdoor plants.html">Outdoor Plants</a>
+                            <a class="dropdown-item" href="air purifiying plants.html">Air purifaying Plants</a>
+                            <a class="dropdown-item" href="bestseller plants.html">Bestseller Plants</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login page.html">Login/sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cart.html">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- full Title -->
+    <div class="full-title">
+        <div class="container">
+            <h1 class="mt-4 mb-3">Shopping Cart
+                <small>Your Selected Services</small>
+            </h1>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="breadcrumb-main">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Cart</li>
+            </ol>
+        </div>
+
+        <!-- Cart Content -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Cart Items</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="cart-items">
+                            <!-- Cart items will be dynamically added here -->
+                        </div>
+                        <div id="empty-cart-message" class="text-center py-4" style="display: none;">
+                            <h5>Your cart is empty</h5>
+                            <a href="services.html" class="btn btn-primary mt-3">Browse Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Order Summary</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Subtotal</span>
+                            <span id="subtotal">₹0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>GST (18%)</span>
+                            <span id="tax">₹0.00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Total</strong>
+                            <strong id="total">₹0.00</strong>
+                        </div>
+                        <button id="checkout-btn" class="btn btn-success w-100" onclick="proceedToPayment()">Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <a href="#"><img src="images/logo.png" alt="Bonsai The Nursary" /></a>
+            </div>
+           
+        </div>
+    </footer>
+
+    <style>
+    .cart-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+    }
+    .cart-item:last-child {
+        border-bottom: none;
+    }
+    .remove-item {
+        color: #dc3545;
+        cursor: pointer;
+    }
+    .remove-item:hover {
+        color: #c82333;
+    }
+    .quantity-control {
+        width: 100px;
+    }
+    </style>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    function formatPrice(price) {
+        return '₹' + price.toFixed(2);
+    }
+
+    function updateCart() {
+        const cartContainer = document.getElementById('cart-items');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '';
+            emptyCartMessage.style.display = 'block';
+            return;
+        }
+
+        emptyCartMessage.style.display = 'none';
+        let cartHTML = '';
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+            subtotal += item.price;
+            cartHTML += `
+                <div class="cart-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1">${item.name}</h5>
+                            <p class="mb-0 text-muted">${formatPrice(item.price)}</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-trash remove-item ml-3" onclick="removeItem(${index})"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        cartContainer.innerHTML = cartHTML;
+
+        // Update summary
+        const tax = subtotal * 0.18;
+        const total = subtotal + tax;
+
+        document.getElementById('subtotal').textContent = formatPrice(subtotal);
+        document.getElementById('tax').textContent = formatPrice(tax);
+        document.getElementById('total').textContent = formatPrice(total);
+
+        // Update checkout button state
+        document.getElementById('checkout-btn').disabled = cart.length === 0;
+    }
+
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+        updateCartCount();
+    }
+
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cart.length;
+        
+        let cartLinks = document.querySelectorAll('.nav-link[href="cart.html"]');
+        cartLinks.forEach(link => {
+            let existingCount = link.querySelector('.cart-count');
+            if (existingCount) {
+                existingCount.remove();
+            }
+            
+            if (count > 0) {
+                let countSpan = document.createElement('span');
+                countSpan.className = 'cart-count';
+                countSpan.textContent = count;
+                link.style.position = 'relative';
+                link.appendChild(countSpan);
+            }
+        });
+    }
+
+    function proceedToPayment() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        
+        // Store cart total in localStorage for payment page
+        const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+        const tax = subtotal * 0.18;
+        const total = subtotal + tax;
+        localStorage.setItem('cartTotal', total);
+        
+        // Redirect to payment page
+        window.location.href = 'payment.html';
+    }
+
+    // Initialize cart on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCart();
+        updateCartCount();
+    });
+    </script>
+</body>
+</html>
+    
